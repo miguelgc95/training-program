@@ -1,0 +1,51 @@
+.title {
+    text-align: center;
+}
+
+.p-center {
+    padding-left: 10%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .week {
+    width: 30%;
+} */
+
+.leyend{
+    display: flex;
+    justify-content: space-around;
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.day span {
+    width: 15%;
+    margin-left: 25px;
+}
+
+.day li {
+    color: sienna;
+}
+.morning-color {
+    color: rgb(48, 124, 18) !important;
+}
+
+.lunch-color {
+    color: rgb(41, 68, 221) !important;
+}
+
+.evening-color {
+    color: sienna;
+}
+
+.night-color {
+    color: rgb(230, 56, 230) !important;
+}
