@@ -1,3 +1,5 @@
-function requestDayTable (){
+<?php
+
+function requestDayTable ($smartProgress){
     return $smartProgress->query("SELECT * FROM monday");
 }
