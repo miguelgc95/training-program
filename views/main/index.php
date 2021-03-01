@@ -161,7 +161,11 @@
                 <span>Lunes</span>
                 <ul>
                     <?php
-                        require_once("./MVC/controller/smartProgressController.php");
+                    function requestDayTable($smartProgress)
+                    {
+                        return $smartProgress->query("SELECT * FROM monday");
+                    }
+                    $day = requestDayTable($smartProgress);
                     ?>
                 </ul>
             </div>
