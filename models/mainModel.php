@@ -7,11 +7,12 @@ class MainModel extends Model{
     }
 
     public function getDayTraining($day){
-        $query = $this->db->connect()->prepare("SELECT * FROM :day");
+        $query = $this->db->connect()->prepare("SELECT * FROM {$day}");
         try {
-            $query->execute(['day' => $day]);
-            return $query->fetch();
+            $query->execute();
+            return $query->fetchAll();
         } catch (PDOException $e) {
+            echo $e;
             return $e;
         }
     }

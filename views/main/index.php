@@ -161,15 +161,13 @@
                 <span>Lunes</span>
                 <ul>
                     <?php
-                    function requestDayTable($smartProgress)
-                    {
-                        return $smartProgress->query("SELECT * FROM monday");
-                    }
-                    $day = requestDayTable($smartProgress);
+                        foreach($this->weekTable["monday"] as $exercise){
+                            echo "<li class='$exercise[1]'>$exercise[0]</li>";
+                        }
                     ?>
+
                 </ul>
             </div>
-
         </section>
     </main>
 </body>

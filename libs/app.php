@@ -7,7 +7,6 @@ class App
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-        var_dump($url);
 
         //$session = new Session($url[0]);
 
@@ -15,7 +14,10 @@ class App
             $controllerRoute = 'controllers/mainController.php';
             require_once($controllerRoute);
             $controller = new Main();
-            $controller->loadModel("mainModel");
+            $controller->loadModel("main");
+            foreach ($controller->days as $day) {
+                $controller->view->weekTable[$day] = $controller->requestDayTraining($day);
+            }
             $controller->render();
         } else {
             $controllerRoute = 'controllers/' . $url[0] . 'Controller.php';

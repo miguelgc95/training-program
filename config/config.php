@@ -1,5 +1,5 @@
 <?php
-//TODO change want must be changed
+
 define('URL', "http://training-program/");
 
 define('HOST', 'localhost');
