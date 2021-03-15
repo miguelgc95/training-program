@@ -6,8 +6,8 @@ class MainModel extends Model{
         parent::__construct();
     }
 
-    public function getDayTraining($day){
-        $query = $this->db->connect()->prepare("SELECT * FROM {$day}");
+    public function getDayTraining(){
+        $query = $this->db->connect()->prepare("SELECT * FROM original WHERE name='monday'");
         try {
             $query->execute();
             return $query->fetchAll();

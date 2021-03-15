@@ -7,7 +7,6 @@ class App
     protected $method;
     protected $params;
 
-
     public function __construct()
     {
         $this->setUrl();
@@ -20,7 +19,7 @@ class App
     {
         $controllerRoute = 'controllers/' . $this->controller . 'Controller.php';
         if (file_exists($controllerRoute)) {
-            require_once $controllerRoute;
+            require_once($controllerRoute);
             $controller = new $this->controller;
             $controller->loadModel($this->controller);
             if ($this->params) {
@@ -31,6 +30,7 @@ class App
                 $controller->render();
             }
         } else {
+            var_dump('hola');
             $this->errorPage();
         }
     }
@@ -85,7 +85,11 @@ class App
 
     function setMethod()
     {
-        $this->method = !(empty($this->url[1])) ? $this->url[1] : null;
+        if ($this->controller == "main"){
+            $this->method = !(empty($this->url[1])) ? $this->url[1] : 'requestDayTraining';
+        }else{
+            $this->method = !(empty($this->url[1])) ? $this->url[1] : null;
+        }
     }
 
     function setParams()

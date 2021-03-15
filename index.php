@@ -8,7 +8,6 @@ require_once("./libs/database.php");
 require_once("./libs/app.php");
 
 $app = new App();
-
 $app->routing();
 
 ?>

@@ -161,9 +161,9 @@
                 <span>Lunes</span>
                 <ul>
                     <?php
-                        foreach($this->weekTable["monday"] as $exercise){
-                            echo "<li class='$exercise[1]'>$exercise[0]</li>";
-                        }
+                    foreach (json_decode($this->monday[0][2], true) as $exercise => $color) {
+                        echo "<li class='$color'>$exercise</li>";
+                    }
                     ?>
 
                 </ul>

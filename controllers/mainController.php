@@ -16,8 +16,9 @@ class Main extends Controller
         $this->view->render("main/index");
     }
 
-    public function requestDayTraining($day)
+    public function requestDayTraining()
     {
-        return $this->model->getDayTraining($day);
+        $this->view->monday = $this->model->getDayTraining();
+        $this->render();
     }
 }
